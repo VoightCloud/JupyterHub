@@ -1,0 +1,9 @@
+- name: Install HAProxy
+  hosts: localhost
+  connection: local
+
+  vars:
+    namespace: build
+
+  roles:
+    - jupyterhub

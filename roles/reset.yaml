@@ -1,0 +1,8 @@
+- name: Remove HaProxy
+  hosts: controlplane
+  tasks:
+    - name: Reset Site Certificates
+      command: helm uninstall certificates
+
+    - name: Reset HaProxy
+      command: helm uninstall haproxy
