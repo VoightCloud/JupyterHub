@@ -2,7 +2,7 @@ namespace: build
 
 deployment: jupyterhub
 
-serviceType: NodePort
+serviceType: LoadBalancer
 
 serviceLoadBalancerIP: 192.168.137.82
 
