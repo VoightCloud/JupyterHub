@@ -22,7 +22,6 @@
     chart_ref: jupyterhub/jupyterhub
     release_namespace: "{{ namespace }}"
     release_values:
-      version: 1.1.3
       hub:
         service:
           type: "{{ serviceType }}"
