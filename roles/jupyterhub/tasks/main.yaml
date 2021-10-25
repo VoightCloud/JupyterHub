@@ -31,24 +31,24 @@
         tag: "1.1.3"
       db:
         pvc:
-          storageClassName: "{{ nfs-nas }}"
+          storageClassName: "nfs-nas"
     ingress:
       enabled: true
       hosts: [ jupyter.voight.org]
 
-
-      serviceAccount:
-        name: "{{ serviceAccountName }}"
-      controller:
-        ingressClass: "{{ ingressClass }}"
-        defaultTLSSecret:
-          secret: "{{ defaultTLSSecretSecret }}"
-        affinity: "{{ nodeAffinity }}"
-        service:
-          type: "{{ serviceType }}"
-          loadBalancerIP: "{{ serviceLoadBalancerIP }}"
-      defaultBackend:
-        affinity: "{{ nodeAffinity }}"
-        serviceAccount:
-          create: false
-          name: "{{ serviceAccountName }}"
+#
+#      serviceAccount:
+#        name: "{{ serviceAccountName }}"
+#      controller:
+#        ingressClass: "{{ ingressClass }}"
+#        defaultTLSSecret:
+#          secret: "{{ defaultTLSSecretSecret }}"
+#        affinity: "{{ nodeAffinity }}"
+#        service:
+#          type: "{{ serviceType }}"
+#          loadBalancerIP: "{{ serviceLoadBalancerIP }}"
+#      defaultBackend:
+#        affinity: "{{ nodeAffinity }}"
+#        serviceAccount:
+#          create: false
+#          name: "{{ serviceAccountName }}"

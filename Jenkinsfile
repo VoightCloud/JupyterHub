@@ -1,9 +1,9 @@
-GString label = "haproxy-build-${UUID.randomUUID().toString()}"
+GString label = "jupyterhub-build-${UUID.randomUUID().toString()}"
 
 def IS_MAIN = ( env.BRANCH_NAME == "main" )
 
 def NAMESPACE = (IS_MAIN ? "default" : "build")
-def DEPLOYMENT = (IS_MAIN ? "haproxy" : "haproxy-"+NAMESPACE)
+def DEPLOYMENT = (IS_MAIN ? "jupyterhub" : "jupyterhub-"+NAMESPACE)
 def SERVICE_TYPE = (IS_MAIN ? "LoadBalancer" : "NodePort")
 
 stage('Build') {
