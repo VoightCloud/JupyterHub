@@ -34,6 +34,12 @@
       ingress:
         enabled: true
         hosts: [ jupyter.voight.org]
+      singleuser:
+        image:
+          name: "voight/datascience-notebook"
+          tag: "1.2"
+        nodeSelector:
+          node-role.kubernetes.io/GPU: true
 
 #
 #      serviceAccount:
