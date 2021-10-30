@@ -21,24 +21,24 @@
     name: "{{ deployment }}"
     chart_ref: jupyterhub/jupyterhub
     release_namespace: "{{ namespace }}"
-    release_values:
-      hub:
-        service:
-          type: "{{ serviceType }}"
-          loadBalancerIP: "{{ serviceLoadBalancerIP }}"
-        image:
-          tag: "1.1.3"
-        db:
-          pvc:
-            storageClassName: "nfs-nas"
-      ingress:
-        enabled: true
-        hosts: [ jupyter.voight.org]
-      singleuser:
-        image:
-          name: "voight/datascience-notebook"
-          tag: "1.2"
-        nodeSelector: {"node-role.kubernetes.io/GPU": "true"}
+#    release_values:
+#      hub:
+#        service:
+#          type: "{{ serviceType }}"
+#          loadBalancerIP: "{{ serviceLoadBalancerIP }}"
+#        image:
+#          tag: "1.1.3"
+#        db:
+#          pvc:
+#            storageClassName: "nfs-nas"
+#      ingress:
+#        enabled: true
+#        hosts: [ jupyter.voight.org]
+#      singleuser:
+#        image:
+#          name: "voight/datascience-notebook"
+#          tag: "1.2"
+#        nodeSelector: {"node-role.kubernetes.io/GPU": "true"}
 
 #
 #      serviceAccount:
